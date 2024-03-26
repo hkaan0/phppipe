@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+        - name: php-app
+          image: hkaan/php:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: php-app-storage
+              mountPath: /var/lib/longhorn
+      volumes:
+        - name: php-app-storage
+          persistentVolumeClaim:
+            claimName: php-app-pvc
+
