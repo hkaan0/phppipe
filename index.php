@@ -43,7 +43,7 @@ echo $source . '<br>';
         <tr>
             <th>Number</th>
             <th>First Name</th>
-            <th>Last Name</th>
+            <th>LastName</th>
             <th>Birth Date</th>
             <th>Gender</th>
             <th>Hired on</th>
